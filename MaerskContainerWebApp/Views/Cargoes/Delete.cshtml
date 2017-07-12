@@ -1,0 +1,48 @@
+﻿@model MaerskContainerWebApp.Models.Cargo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Cargo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Warehouse.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Warehouse.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CargoVolume)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CargoVolume)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CargoWeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CargoWeight)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
